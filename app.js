@@ -1,11 +1,16 @@
+// const dbURI = 'mongodb+srv://shudson:Chicken27!@cluster2.2lels.mongodb.net/node-auth';
+
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
 // middleware
 app.use(express.static('public'));
+app.use(express.json());
+app.use(cookieParser());
 
 // view engine
 app.set('view engine', 'ejs');
